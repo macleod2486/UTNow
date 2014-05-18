@@ -9,11 +9,52 @@
         <item>Map</item>
         <item>Settings</item>
     </string-array>
-    <string-array 
-        name = "buildingList">
-        <item>Almetris Duren Hall</item>
-        <item>Anna Hiss Gymnasium</item>
-        <item>Alltest</item>
+    <string-array
+        name = "fraternity">
+        <item>Acacia,30.291825,-97.744809</item>
+		<item>AlphaEpsilonPi,30.293981,-97.743781</item>
+		<item>AlphaTauOmega,30.288052,-97.751250</item>
+		<item>BetaChiTheta,30.287548,-97.749185</item>
+		<item>BetaKappaGamma,30.284504,-97.745283</item>
+		<item>DeltaChi,30.291560,-97.746966</item>
+		<item>DeltaSigmaPhi,30.290901,-97.745103</item>
+		<item>DeltaTauDelta,30.290177,-97.734048</item>	
+		<item>GammaBeta,30.287660,-97.749694</item>
+		<item>KappaSigma,30.291364,-97.748093</item>
+		<item>LambdaChiAlpha,30.289948,-97.745983</item>
+		<item>PhiDeltaTheta,30.282915,-97.744404</item>
+		<item>PhiGammaDelta,30.292276,-97.740652</item>
+		<item>PiKappaAlpha,30.288577,-97.749833</item>	
+		<item>PiKappaPhi,30.289884,-97.733641</item>
+		<item>SigmaAlphaEpsilon,30.289127,-97.746972</item>	
+		<item>SigmaAlphaMu,30.289777,-97.748861</item>
+		<item>SigmaBetaRho,30.292943,-97.740459</item>
+		<item>SigmaChi,30.292215,-97.742322</item>	
+		<item>SigmaKappaPhi,30.294772,-97.744838</item>	
+		<item>SigmaPhiEpsilon,30.290030,-97.746929</item>
+		<item>SigmaPi,30.283484,-97.749187</item>
+		<item>TauKappaEpsilon,30.289577,-97.742730</item>
+		<item>ZetaBetaTau,30.293665,-97.744653</item>
+		<item>ZetaPsi,30.294020,-97.742952</item>
+    </string-array>
+    <string-array
+        name = "sorority">
+        <item>AlphaChiOmega,30.288989,-97.743379</item>
+        <item>AlphaDeltaPi,30.292325,30.292325</item>
+        <item>AlphaEpsilonPhi,30.289584,-97.744855</item>
+        <item>AlphaPhi,30.282995,-97.739302</item>
+        <item>AlphaXiDelta,30.290166,-97.744830</item>
+        <item>ChiOmega,30.292924,-97.743933</item>
+        <item>DeltaDeltaDelta,30.291716,-97.742238</item>
+        <item>DeltaGamma,30.288999,-97.744239</item>
+        <item>KappaAlphaTheta,30.288492,-97.746404</item>
+        <item>KappaDelta,30.287605,-97.743360</item>
+        <item>KappaKappaGamma,30.282733,-97.739334</item>
+        <item>KappaPhiLambda,30.285058,-97.750319</item>
+        <item>PiBetaPhi,30.286834,-97.742987</item>
+        <item>SigmaDeltaTau,30.284878,-97.742630</item>
+        <item>SigmaPhiOmega,30.289929,-97.745750</item>
+        <item>ZetaTauAlpha,30.292828,-97.742297</item>
     </string-array>
     <string name="action_settings">Settings</string>
 

@@ -21,6 +21,9 @@
 */
 package com.macleod2486.fragment;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -30,6 +33,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
@@ -51,12 +56,30 @@ public class Map extends Fragment
 	{
 		View view = inflater.inflate(R.layout.map, container, false);
 		
-		String [] buildingList = getResources().getStringArray(R.array.buildingList);
+		//Gets the building lists into an arraylist
+		ArrayList <String> buildingList = new ArrayList <String>();
+		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
+		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
+		
+		//Only puts the building name for the autocomplete text
+		for(int index = 0; index < buildingList.size(); index ++)
+		{
+			buildingList.set(index, buildingList.get(index).substring(0, buildingList.get(index).indexOf(',')));
+		}
+		
 		search = (AutoCompleteTextView)view.findViewById(R.id.mapSearch);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_dropdown_item_1line, buildingList);
 		search.setThreshold(1);
 		search.setAdapter(adapter);
+		search.setOnItemClickListener(new OnItemClickListener()
+		{
+		    public void onItemClick(AdapterView<?> parent, View view, int position, long rowId)
+		    {
+		        String selection = (String)parent.getItemAtPosition(position);
+		        Log.i("Map",selection);
+		    }
+		});
 		
 		return view;
 	}
