@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UTNow</string>
+    <string-array 
+        name = "list">
+        <item>Home</item>
+        <item>UTDirect</item>
+        <item>Map</item>
+        <item>Settings</item>
+    </string-array>
+    <string-array 
+        name = "buildingList">
+        <item>Almetris Duren Hall</item>
+        <item>Anna Hiss Gymnasium</item>
+        <item>Alltest</item>
+    </string-array>
+    <string name="action_settings">Settings</string>
+
+</resources>
