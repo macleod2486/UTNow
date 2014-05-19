@@ -42,6 +42,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.macleod2486.utnow.R;
 
 public class Map extends Fragment 
@@ -51,13 +52,15 @@ public class Map extends Fragment
 	
 	private LatLng UTLoc= new LatLng(30.284961, -97.734113);
 	
+	private ArrayList <String> buildingList = new ArrayList <String>();
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
 		View view = inflater.inflate(R.layout.map, container, false);
 		
 		//Gets the building lists into an arraylist
-		ArrayList <String> buildingList = new ArrayList <String>();
+		buildingList.clear();
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
 		
@@ -74,10 +77,33 @@ public class Map extends Fragment
 		search.setAdapter(adapter);
 		search.setOnItemClickListener(new OnItemClickListener()
 		{
+			
 		    public void onItemClick(AdapterView<?> parent, View view, int position, long rowId)
 		    {
-		        String selection = (String)parent.getItemAtPosition(position);
-		        Log.i("Map",selection);
+		    	Double lat;
+				Double lon;
+				
+				String selection = (String)parent.getItemAtPosition(position);
+				String latitude;
+				String longitude;
+				//Array with complete coordinates
+		    	ArrayList <String> completeList = new ArrayList <String>();
+		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
+		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
+		    	
+		    	latitude = completeList.get(buildingList.indexOf(selection));
+		    	latitude = latitude.substring(latitude.indexOf(",")+1,latitude.lastIndexOf(","));
+		    	longitude = completeList.get(buildingList.indexOf(selection));
+		    	longitude = longitude.substring(longitude.lastIndexOf(",")+1);
+		    	
+		    	lat = Double.parseDouble(latitude);
+		    	lon = Double.parseDouble(longitude);
+		    	
+				UT.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(selection));
+				UT.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lon), 17));
+		        
+		        Log.i("Map","Selected "+search.getText()+selection);
+		        Log.i("Map","Selected index "+completeList.get(buildingList.indexOf(selection)));
 		    }
 		});
 		
