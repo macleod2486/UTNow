@@ -99,6 +99,7 @@ public class Map extends Fragment
 		    	lat = Double.parseDouble(latitude);
 		    	lon = Double.parseDouble(longitude);
 		    	
+		    	UT.clear();
 				UT.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(selection));
 				UT.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lon), 17));
 		        
