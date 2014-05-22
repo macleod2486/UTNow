@@ -23,6 +23,7 @@ package com.macleod2486.fragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -63,6 +64,7 @@ public class Map extends Fragment
 		buildingList.clear();
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
+		Collections.sort(buildingList,String.CASE_INSENSITIVE_ORDER);
 		
 		//Only puts the building name for the autocomplete text
 		for(int index = 0; index < buildingList.size(); index ++)
@@ -90,6 +92,7 @@ public class Map extends Fragment
 		    	ArrayList <String> completeList = new ArrayList <String>();
 		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
 		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
+		    	Collections.sort(completeList,String.CASE_INSENSITIVE_ORDER);
 		    	
 		    	latitude = completeList.get(buildingList.indexOf(selection));
 		    	latitude = latitude.substring(latitude.indexOf(",")+1,latitude.lastIndexOf(","));
