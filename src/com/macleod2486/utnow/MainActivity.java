@@ -45,7 +45,7 @@ public class MainActivity extends FragmentActivity
 	private Map map = new Map();
 	
 	private String directUrl = "https://utdirect.utexas.edu/";
-	private String calenderUrl = "http://calendar.utexas.edu/";
+	private String calenderUrl = "http://www.utexas.edu/";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -55,7 +55,7 @@ public class MainActivity extends FragmentActivity
 		
 		//Configures the drawer
 		drawer = (DrawerLayout)findViewById(R.id.drawer);
-		drawer.setDrawerListener(new DrawerLayout.SimpleDrawerListener() 
+		drawer.setDrawerListener(new DrawerLayout.SimpleDrawerListener()
 		{
 			@Override
 			public void onDrawerClosed(View drawerView)
