@@ -47,6 +47,23 @@ public class MainActivity extends FragmentActivity
 	private String directUrl = "https://utdirect.utexas.edu/";
 	private String calenderUrl = "http://www.utexas.edu/";
 	
+	private int index = 0;
+	
+	//Manages what the back button does
+	@Override
+	public void onBackPressed()
+	{
+		if(index == 0 && !main.isAdded())
+		{
+			Log.i("Main","Is added");
+			getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
+		}
+		else
+		{
+			super.onBackPressed();
+		}
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -83,14 +100,17 @@ public class MainActivity extends FragmentActivity
 				
 				if(position == 0)
 				{
-					getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
+					index = 0;
+					getSupportFragmentManager().beginTransaction().replace(R.id.container, main, "main").commit();
 				}
 				else if(position == 1)
 				{
+					index = 1;
 					getSupportFragmentManager().beginTransaction().replace(R.id.container, direct).commit();
 				}
 				else if(position == 2)
 				{
+					index = 2;
 					getSupportFragmentManager().beginTransaction().replace(R.id.container, map).commit();
 				}
 				drawer.closeDrawers();
