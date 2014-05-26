@@ -149,7 +149,7 @@ public class Map extends Fragment
 		
 		SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(getActivity());
 		
-		String UTSel = shared.getString("UTSelect", "1");
+		String UTSel = shared.getString("maptype", "1");
 		
 		if(UT==null)
 		{

@@ -21,6 +21,7 @@
 */
 package com.macleod2486.utnow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
@@ -112,6 +113,11 @@ public class MainActivity extends FragmentActivity
 				{
 					index = 2;
 					getSupportFragmentManager().beginTransaction().replace(R.id.container, map).commit();
+				}
+				else if(position == 3)
+				{
+					index = 3;
+					startActivity(new Intent(MainActivity.this,Preference.class));
 				}
 				drawer.closeDrawers();
 			}

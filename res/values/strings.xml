@@ -9,6 +9,19 @@
         <item>Map</item>
         <item>Settings</item>
     </string-array>
+    
+    <string-array name = "maptypes">
+        <item>Hybrid</item>
+        <item>Street</item>
+        <item>Satellite</item>
+    </string-array>
+    
+    <string-array name="selection">
+	    <item>1</item>
+	    <item>2</item>
+	    <item>3</item>
+	</string-array>
+    
     <string-array
         name = "fraternity">
         <item>Acacia,30.291825,-97.744809</item>
