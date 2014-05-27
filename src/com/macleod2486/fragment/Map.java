@@ -64,6 +64,7 @@ public class Map extends Fragment
 		buildingList.clear();
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
+		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.maincampus)));
 		Collections.sort(buildingList,String.CASE_INSENSITIVE_ORDER);
 		
 		//Only puts the building name for the autocomplete text
@@ -92,6 +93,7 @@ public class Map extends Fragment
 		    	ArrayList <String> completeList = new ArrayList <String>();
 		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
 		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
+		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.maincampus)));
 		    	Collections.sort(completeList,String.CASE_INSENSITIVE_ORDER);
 		    	
 		    	latitude = completeList.get(buildingList.indexOf(selection));
