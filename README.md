@@ -7,9 +7,10 @@ Currently in development
 ###Contributions
 
 To contribute building information that can be found to this project go to
+
     res/values/strings.xml 
 
-From there follow the example below
+From there follow the example below within the string array named maincampus
 
     <item>buildingName,latitude,longitude</item> 
 
