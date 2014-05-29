@@ -173,13 +173,17 @@ public class Map extends Fragment
 				UT.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 			}
 			else if(UTSel.contains("2"))
-			{	UT.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+			{	
+				UT.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 			}
 			else if(UTSel.contains("3"))
 			{	
 				UT.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
 			}
-			
+			else if(UTSel.contains("4"))
+			{
+				UT.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+			}
 			Log.i("Google","UT setting set");
 		}
 	}

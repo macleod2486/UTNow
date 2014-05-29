@@ -14,6 +14,7 @@
     <string-array name = "maptypes">
         <item>Hybrid</item>
         <item>Street</item>
+        <item>Terrain</item>
         <item>Satellite</item>
     </string-array>
     
@@ -21,6 +22,7 @@
 	    <item>1</item>
 	    <item>2</item>
 	    <item>3</item>
+	    <item>4</item>
 	</string-array>
     
     <string-array
