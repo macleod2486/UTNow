@@ -19,3 +19,8 @@ and latitude and longtitude is the the decimal value of the coordinates of the b
 This can be easily obtained through here.
 
 http://itouchmap.com/latlong.html
+
+###Necessary Libraries
+
+-The latest Google Play services
+-Latest Google AppCompat library
