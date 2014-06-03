@@ -23,9 +23,11 @@ package com.macleod2486.utnow;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
@@ -40,6 +42,7 @@ import com.macleod2486.fragment.UTWebView;
 public class MainActivity extends FragmentActivity
 {
 	private DrawerLayout drawer;
+	private ActionBarDrawerToggle drawerToggle;
 	
 	private UTWebView direct = new UTWebView();
 	private Main main = new Main();
@@ -73,20 +76,21 @@ public class MainActivity extends FragmentActivity
 		
 		//Configures the drawer
 		drawer = (DrawerLayout)findViewById(R.id.drawer);
-		drawer.setDrawerListener(new DrawerLayout.SimpleDrawerListener()
+		drawerToggle = new ActionBarDrawerToggle(this, drawer, R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close)
 		{
-			@Override
-			public void onDrawerClosed(View drawerView)
+			public void onDrawerClosed(View view)
 			{
-				super.onDrawerClosed(drawerView);
+				getActionBar().setTitle(R.string.drawer_close);
+				super.onDrawerClosed(view);
 			}
 			
-			@Override
 			public void onDrawerOpened(View drawerView)
 			{
+				getActionBar().setTitle(R.string.drawer_open);
 				super.onDrawerOpened(drawerView);
 			}
-		});
+		};
+		drawer.setDrawerListener(drawerToggle);
 		drawer.setDrawerLockMode(drawer.LOCK_MODE_UNLOCKED);
 		
 		//Sets up the listview within the drawer
@@ -125,7 +129,21 @@ public class MainActivity extends FragmentActivity
 		direct.loadUrl(directUrl, false);
 		main.loadUrl(calenderUrl);
 		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setHomeButtonEnabled(true);
+		
 		getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		if(drawerToggle.onOptionsItemSelected(item))
+		{
+			return true;
+		}
+		
+		return super.onOptionsItemSelected(item);
 	}
 	
 	//Methods for the utdirect webview
