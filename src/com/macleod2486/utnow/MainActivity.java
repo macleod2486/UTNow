@@ -116,7 +116,6 @@ public class MainActivity extends FragmentActivity
 				}
 				else if(position == 3)
 				{
-					index = 3;
 					startActivity(new Intent(MainActivity.this,Preference.class));
 				}
 				drawer.closeDrawers();

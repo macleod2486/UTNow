@@ -31,7 +31,6 @@ import org.jsoup.select.Elements;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -116,7 +115,6 @@ public class Main extends Fragment
 							!newsEvents.text().contains("Emergency Information") &&
 							!newsEvents.text().contains("ITS Alerts"))
 					{
-						Log.i("Main",newsEvents.attr("abs:href").toString());
 						titles.add(newsEvents.text());
 						links.add(newsEvents.attr("abs:href").toString());
 					}
