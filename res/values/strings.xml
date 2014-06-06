@@ -31,54 +31,346 @@
     <string-array
         name = "fraternity">
         <item>Acacia,30.291825,-97.744809</item>
-		<item>AlphaEpsilonPi,30.293981,-97.743781</item>
-		<item>AlphaTauOmega,30.288052,-97.751250</item>
-		<item>BetaChiTheta,30.287548,-97.749185</item>
-		<item>BetaKappaGamma,30.284504,-97.745283</item>
-		<item>DeltaChi,30.291560,-97.746966</item>
-		<item>DeltaSigmaPhi,30.290901,-97.745103</item>
-		<item>DeltaTauDelta,30.290177,-97.734048</item>	
-		<item>GammaBeta,30.287660,-97.749694</item>
-		<item>KappaSigma,30.291364,-97.748093</item>
-		<item>LambdaChiAlpha,30.289948,-97.745983</item>
-		<item>PhiDeltaTheta,30.282915,-97.744404</item>
-		<item>PhiGammaDelta,30.292276,-97.740652</item>
-		<item>PiKappaAlpha,30.288577,-97.749833</item>	
-		<item>PiKappaPhi,30.289884,-97.733641</item>
-		<item>SigmaAlphaEpsilon,30.289127,-97.746972</item>	
-		<item>SigmaAlphaMu,30.289777,-97.748861</item>
-		<item>SigmaBetaRho,30.292943,-97.740459</item>
-		<item>SigmaChi,30.292215,-97.742322</item>	
-		<item>SigmaKappaPhi,30.294772,-97.744838</item>	
-		<item>SigmaPhiEpsilon,30.290030,-97.746929</item>
-		<item>SigmaPi,30.283484,-97.749187</item>
-		<item>TauKappaEpsilon,30.289577,-97.742730</item>
-		<item>ZetaBetaTau,30.293665,-97.744653</item>
-		<item>ZetaPsi,30.294020,-97.742952</item>
+		<item>Alpha Epsilon Pi,30.293981,-97.743781</item>
+		<item>Alpha Tau Omega,30.288052,-97.751250</item>
+		<item>Beta Chi Theta,30.287548,-97.749185</item>
+		<item>Beta Kappa Gamma,30.284504,-97.745283</item>
+		<item>Delta Chi,30.291560,-97.746966</item>
+		<item>Delta Sigma Phi,30.290901,-97.745103</item>
+		<item>Delta Tau Delta,30.290177,-97.734048</item>	
+		<item>Gamma Beta,30.287660,-97.749694</item>
+		<item>Kappa Sigma,30.291364,-97.748093</item>
+		<item>Lambda Chi Alpha,30.289948,-97.745983</item>
+		<item>Phi Delta Theta,30.282915,-97.744404</item>
+		<item>Phi Gamma Delta,30.292276,-97.740652</item>
+		<item>Pi Kappa Alpha,30.288577,-97.749833</item>	
+		<item>Pi Kappa Phi,30.289884,-97.733641</item>
+		<item>Sigma Alpha Epsilon,30.289127,-97.746972</item>	
+		<item>Sigma Alpha Mu,30.289777,-97.748861</item>
+		<item>Sigma Beta Rho,30.292943,-97.740459</item>
+		<item>Sigma Chi,30.292215,-97.742322</item>	
+		<item>Sigma Kappa Phi,30.294772,-97.744838</item>	
+		<item>Sigma Phi Epsilon,30.290030,-97.746929</item>
+		<item>Sigma Pi,30.283484,-97.749187</item>
+		<item>Tau Kappa Epsilon,30.289577,-97.742730</item>
+		<item>Zeta Beta Tau,30.293665,-97.744653</item>
+		<item>Zeta Psi,30.294020,-97.742952</item>
     </string-array>
     
     <string-array
         name = "sorority">
-        <item>AlphaChiOmega,30.288989,-97.743379</item>
-        <item>AlphaDeltaPi,30.292325,30.292325</item>
-        <item>AlphaEpsilonPhi,30.289584,-97.744855</item>
-        <item>AlphaPhi,30.282995,-97.739302</item>
-        <item>AlphaXiDelta,30.290166,-97.744830</item>
-        <item>ChiOmega,30.292924,-97.743933</item>
-        <item>DeltaDeltaDelta,30.291716,-97.742238</item>
-        <item>DeltaGamma,30.288999,-97.744239</item>
-        <item>KappaAlphaTheta,30.288492,-97.746404</item>
-        <item>KappaDelta,30.287605,-97.743360</item>
-        <item>KappaKappaGamma,30.282733,-97.739334</item>
-        <item>KappaPhiLambda,30.285058,-97.750319</item>
-        <item>PiBetaPhi,30.286834,-97.742987</item>
-        <item>SigmaDeltaTau,30.284878,-97.742630</item>
-        <item>SigmaPhiOmega,30.289929,-97.745750</item>
-        <item>ZetaTauAlpha,30.292828,-97.742297</item>
+        <item>Alpha Chi Omega,30.288989,-97.743379</item>
+        <item>Alpha Delta Pi,30.292325,30.292325</item>
+        <item>Alpha Epsilon Phi,30.289584,-97.744855</item>
+        <item>Alpha Phi,30.282995,-97.739302</item>
+        <item>Alpha Xi Delta,30.290166,-97.744830</item>
+        <item>Chi Omega,30.292924,-97.743933</item>
+        <item>Delta Delta Delta,30.291716,-97.742238</item>
+        <item>Delta Gamma,30.288999,-97.744239</item>
+        <item>Kappa Alpha Theta,30.288492,-97.746404</item>
+        <item>Kappa Delta,30.287605,-97.743360</item>
+        <item>Kappa Kappa Gamma,30.282733,-97.739334</item>
+        <item>Kappa Phi Lambda,30.285058,-97.750319</item>
+        <item>Pi Beta Phi,30.286834,-97.742987</item>
+        <item>Sigma Delta Tau,30.284878,-97.742630</item>
+        <item>Sigma Phi Omega,30.289929,-97.745750</item>
+        <item>Zeta Tau Alpha,30.292828,-97.742297</item>
     </string-array>
     
     <string-array 
         name = "maincampus">
+        <item>ACA- Academic Annex,30.287730,-97.735744</item>
+        <item>AFP- Athletic Fields Pavilion,30.285303,-97.726268</item>
+        <item>AHG- Anna Hiss Gymnasium,30.288513,-97.737863</item>
+        <item>ANB- Arno Nowotny Building,30.278248,-97.731018</item>
+        <item>ARC- Animal Resources Center,30.291683,-97.736265</item>
+        <item>ART- Art Building and Museum, 30.286003, -97.733097</item>
+        <item>ATT- AT&T Conference Center, 30.281973, -97.740333</item>
+        <item>BAT- Batts Hall, 30.284812, -97.738941</item>
+        <item>BEL- Belmont Hall, 30.283849, -97.733507</item>
+        <item>BEN- Benedict Hall, 30.283960, -97.739059</item>
+        <item>BIO- Biological Laboratories, 30.287212, -97.739757</item>
+        <item>BMA- Blanton Museum of Art, 30.281014, -97.737421</item>
+        <item>BMC- Belo Center for New Media, 30.290189, -97.740749</item>
+        <item>BME- Biomedical Engineering Building, 30.289231, -97.738598</item>
+        <item>BOT- Biological Greenhouse, 30.286915, -97.740057</item>
+        <item>BWY- Bridgeway Building, 30.290787, -97.738194</item>
+        <item>BRB- Bernard Rapoport Building, 30.285234, -97.736720</item>
+        <item>BTL- Battle Hall, 30.285387, -97.74025</item>
+        <item>BUR- Burdine Hall, 30.288750, -97.738394</item>
+        <item>CAL- Calhoun Hall, 30.284479, -97.740186</item>
+        <item>CBA- McCombs School of Business, 30.284025, -97.737885</item>
+        <item>CCF- Clark Field, 30.281268, -97.734559</item>
+        <item>CCJ- Connally Center for Justice, 30.288087, -97.730420</item>
+        <item>CDA- Comal Child Development Center Annex, 30.282971, -97.725651</item>
+        <item>CDL- Collections Deposit Library, 30.278767, -97.733030</item>
+        <item>CEE- Continuing Engineering Education Building, 30.290645, -97.736451</item>
+        <item>CLA- Liberal Arts Building, 30.284933, -97.735438</item>
+        <item>CLK- Clark Field Support Building, 30.281653, -97.734891</item>
+        <item>CMA- Jones Communication Center, 30.289403, -97.740732</item>
+        <item>CMB- Jones Communication Center, 30.289223, -97.741171</item>
+        <item>CML- Child Development Center, 30.282938, -97.725254</item>
+        <item>COM- Computation Center, 30.285651, -97.738512</item>
+        <item>CPE- Chemical and Petroleum Engineering Building, 30.290219, -97.736111</item>
+        <item>CRB- Computational Resource Building, 30.282186, -97.726442</item>
+        <item>CSA- Computer Science Annex, 30.288467, -97.735658</item>
+        <item>CS3- Chilling Station No. 3, 30.280699, -97.735487</item>
+        <item>CS4- Chilling Station No. 4, 30.288685, -97.732421</item>
+        <item>CS5- Chilling Station No. 5, 30.290694, -97.735458</item>
+        <item>DEV- Development Office Building, 30.287318, -97.723537</item>
+        <item>DFA- Doty Fine Arts Building, 30.285841, -97.731772</item>
+        <item>DFF- UFCU Disch-Falk Field, 30.279953, -97.726158</item>
+        <item>EAS- Edgar A. Smith Building, 30.281162, -97.738220</item>
+        <item>ECJ- Ernest Cockrell Jr. Hall, 30.288977, -97.735379</item>
+        <item>ENS- Engineering-Science Building, 30.288092, -97.735320</item>
+        <item>EPS- E.P. Schoch Building, 30.285771, -97.736678</item>
+        <item>ERC- Frank Erwin Center, 30.276951, -97.732161</item>
+        <item>ETC- Engineering Teaching Center ll, 30.289908, -97.735394</item>
+        <item>FAC- Flawn Academic Center, 30.286294, -97.740315</item>
+        <item>FC1- Facilities Complex Building 1, 30.284567, -97.722529</item>
+        <item>FC2- Facilities Complex Building 2, 30.283951, -97.723055</item>
+        <item>FC3- Facilities Complex Building 3, 30.284766, -97.723639</item>
+        <item>FC4- Facilities Complex Building 4, 30.284298, -97.723548</item>
+        <item>FC5- Facilities Complex Building 5, 30.283649, -97.724557</item>
+        <item>FC6- Facilities Complex Building 6, 30.283473, -97.725710</item>
+        <item>FC7- Facilities Complex Building 7, 30.283367, -97.726316</item>
+        <item>FC8- Facilities Complex Building 8, 30.285428, -97.724085</item>
+        <item>FDF- Frank Denius Fields, 30.284692, -97.727014</item>
+        <item>FDH- Frank Dobie House, 30.289433, -97.732526</item>
+        <item>FNT- Faulkner Nano Science and Technology Building, 30.287856, -97.737997</item>
+        <item>FPC- OFPC Field Staff Office, 30.279346, -97.724994</item>
+        <item>GAR- Garrison Hall, 30.285178, -97.738539</item>
+        <item>GEB- Gebauer Building, 30.286359, -97.738630</item>
+        <item>GDC- Gates Dell Complex, 30.286253, -97.736543</item>
+        <item>GOL- Goldsmith Hall, 30.285350, -97.741184</item>
+        <item>GRE- Gregory Gymnasium, 30.284039, -97.736356</item>
+        <item>GSB- Graduate School of Business Building, 30.284117, -97.738357</item>
+        <item>HMA- Hogg Memorial Auditorium, 30.286878, -97.740604</item>
+        <item>HRC- Harry Ransom Center, 30.284354, -97.741243</item>
+        <item>HRH- Homer Rainey Hall, 30.284062, -97.740202</item>
+        <item>HSM- Hearst Building, 30.288917, -97.740769</item>
+        <item>INT- UT International Office, 30.288403, -97.743462</item>
+        <item>IPF- Indoor Practice Facility, 30.286341, -97.726536</item>
+        <item>JES- Jester Center, 30.282811, -97.736782</item>
+        <item>JGB- Jackson Geological Sciences Building, 30.285868, -97.735573</item>
+        <item>JHH- John W. Hargis Hall, 30.278373, -97.732027</item>
+        <item>JON- Jesse H. Jones Hall, 30.288638, -97.731702</item>
+        <item>LBJ- Lyndon B. Johnson Library, 30.285910, -97.729229</item>
+        <item>LCH- Littlefield Carriage House, 30.288567, -97.740876</item>
+        <item>LDH- Lonhorn Dining Facility, 30.282593, -97.735800</item>
+        <item>LFH- Littlefield Home, 30.288095, -97.740766</item>
+        <item>LTH- Laboratory Theater Building, 30.285956, -97.735202</item>
+        <item>MAI- Tower Main Building, 30.286109, -97.739392</item>
+        <item>MBB- Moffet Molecular Biology Building, 30.288476, -97.737235</item>
+        <item>MEZ- Mezes Hall, 30.284391, -97.739016</item>
+        <item>MFH- Mithoff Track and Soccer Fieldhouse, 30.282010, -97.731125</item>
+        <item>MMS- Myers Track and Soccer Stadium, 30.282579, -97.730042</item>
+        <item>MNC- Moncrief-Neuhaus Athletics Center, 30.282343, -97.732638</item>
+        <item>MRH- Music Building/Bates Recital Hall, 30.287327, -97.730645</item>
+        <item>MSB- Mail Services Building, 30.282741, -97.725694</item>
+        <item>NEZ- North End Zone, 30.284710, -97.732391</item>
+        <item>NHB- Norman Hackerman Building, 30.287615, -97.737917</item>
+        <item>NMS- Neural Molecular Science Building, 30.289213, -97.737616</item>
+        <item>NOA- North Office Building, 30.291152, -97.737514</item>
+        <item>NUR- Nursing School, 30.277711, -97.733470</item>
+        <item>PAC- Performing Arts Center, 30.286105, -97.731198</item>
+        <item>PAI- Painter Hall, 30.287128, -97.738738</item>
+        <item>PAR- Parlin Hall, 30.284905, -97.740105</item>
+        <item>PAT- Patterson Laboratories Building, 30.288013, -97.736431</item>
+        <item>PCL- Perry-Castaneda Library, 30.282709, -97.738209</item>
+        <item>PHR- Pharmacy Building, 30.288333, -97.738646</item>
+        <item>POB- Peter O'Donnell Jr. Building, 30.286883, -97.736554</item>
+        <item>PPA- Weaver Power Plant Annex, 30.286883, -97.734425</item>
+        <item>PPB- Printing and Press Building, 30.281361, -97.726877</item>
+        <item>PPE- Weaver Power Plant Expansion, 30.286855, -97.735873</item>
+        <item>PPL- Weaver Power Plant, 30.286698, -97.738947</item>
+        <item>RLM- Robert Lee Moore Hall, 30.289111, -97.736420</item>
+        <item>RSC- Recreational Sports Center, 30.281477, -97.732230</item>
+        <item>SAC- Student Activity Center, 30.284942, -97.735991</item>
+        <item>SBS- McCombs Field, 30.280833, -97.724854</item>
+        <item>SEA- Seay Building, 30.289924, -97.737315</item>
+        <item>SER- Service Building, 30.287624, -97.734650</item>
+        <item>SRH- Sid Richardson Hall, 30.285312, -97.728736</item>
+        <item>SSB- Student Services Buildng, 30.289964, -97.738337</item>
+        <item>SSW- School of Social Work, 30.280680, -97.732665</item>
+        <item>STD- Darrell K. Royal Stadium, 30.283640, -97.732515</item>
+        <item>SUT- Sutton Hall, 30.284956, -97.740814</item>
+        <item>SW7- 2617 Speedway Office Building, 30.290807, -97.736349</item>
+        <item>SZB- George Sanchez Building, 30.281653, -97.738762</item>
+        <item>TCC- Thompson Conference Center, 30.287082, -97.729208</item>
+        <item>TMM- Texas Memorial Museum, 30.286468, -97.732100</item>
+        <item>TNH- Townes Hall, 30.288458, -97.730758</item>
+        <item>TSC- Texas Swimming Center, 30.279818, -97.733368</item>
+        <item>TTC- Penick-Allison Tennis Center, 30.277720, -97.734854</item>
+        <item>UA9- 2609 University Avenue, 30.290281, -97.738696</item>
+        <item>UIL- University Interscholastic League, 30.283307, -97.723645</item>
+        <item>UNB- Union Building, 30.286461, -97.741184</item>
+        <item>UPB- University Police Building, 30.284048, -97.730420</item>
+        <item>USS- University Sign Shop, 30.292599, -97.736284</item>
+        <item>UTA- UT Administration Building, 30.279309, -97.742836</item>
+        <item>UTC- University Teaching Center, 30.283121, -97.738810</item>
+        <item>UTX- Etter-Harbin Alumni Center, 30.284335, -97.734398</item>
+        <item>WAG- Waggener Hall, 30.285118, -97.737606</item>
+        <item>WCH- Will C. Hogg Building, 30.286091, -97.738362</item>
+        <item>WEL- Welch Hall, 30.286989, -97.737740</item>
+        <item>WIN- Winship Drama Building, 30.285836, -97.734494</item>
+        <item>WMB- West Mall Office Building, 30.285451, -97.740647</item>
+        <item>WRW- Woolrich Laboratories, 30.287494, -97.735900</item>
+        <item>WWH- Walter Webb Hall, 30.289339, -97.741804</item>
+    </string-array>
+    
+    <string-array 
+        name = "residencehalls">
+        <item>AND- Andrews  Dormitory, 30.288171, -97.739875</item>
+        <item>ADH- Almetris Duren Hall,30.291518, -97.740636</item>
+        <item>BLD- Blanton Dormitory, 30.288615, -97.739392</item>
+        <item>BHD- Brackenridge Hall Dormitory, 30.283145, -97.735961</item>
+        <item>CRD- Carothers Dormitory, 30.288708, -97.740100</item>
+        <item>CRH- Creekside Residence Hall, 30.288541, -97.733397</item>
+        <item>JCD- Jester West Dormitory, 30.281917, -97.736841</item>
+        <item>JCD- Jester East Dormitory, 30.282389, -97.735986</item>
+        <item>KIN- Kinsolving Residence Hall, 30.290361, -97.739679</item>
+        <item>LTD- Littlefield Dormitory, 30.289299, -97.739715</item>
+        <item>MHD- Moore-Hill Dormitory, 30.283645, -97.735181</item>
+        <item>PHD- Prather Hall Dormitory, 30.282362, -97.735090</item>
+        <item>RHD- Roberts Hall Dormitory, 30.283094, -97.735221</item>
+        <item>SJH- San Jacinto Residence Hall, 30.282616, -97.734376</item>
+        <item>LLC- Whitis Court, 30.290864, -97.740700</item>
+    </string-array>
+    
+      <string-array 
+        name = "parkinggarages">
+        <item>BRG- Brazos Garage, 30.280990, -97.736195</item>
+        <item>CCG- Conference Center Garage, 30.282343, -97.740280</item>
+        <item>GUG- UT Administration Parking Garage, 30.279499, -97.743260</item>
+        <item>MAG- Manor Garage, 30.282806, -97.730991</item>
+        <item>SAG- San Antonio Garage, 30.288718, -97.742668</item>
+        <item>SJG- San Jacinto Garage, 30.287749, -97.732861</item>
+        <item>SWG- Speedway Garage, 30.291161, -97.737096</item>
+        <item>TRG- Trinity Garage, 30.279082, -97.733867</item>
+        <item>TSG- 27th Street Garage, 30.291258, -97.738569</item>
+    </string-array>
+    
+    <string-array 
+        name = "pickleresearchcampus">
+        <item>IRC- Imaging Research Center, 30.395308, -97.736287</item>
+        <item>WPR- West Pickle Research Building, 30.395368, -97.735225</item>
+        <item>WR1- WPR Chilling Plant, 30.396053, -97.736014</item>
+        <item>WR2- WPR Electrical Vault, 30.393582, -97.735896</item>
+        <item>AS1- Expl.Shock Equip. Shelter, 30.389334, -97.729705</item>
+        <item>AS2- Sub-Sonic Wind Tunnel, 30.389339, -97.729204</item>
+        <item>AS3- Explosive Shock Mechanics, 30.389218, -97.729684</item>
+        <item>AS4- Aero Engineering Test Facility, 30.389450, -97.729426</item>
+        <item>ASR- Experimental Aerodynamics, 30.389003, -97.729311</item>
+        <item>BE1- Beg. Mineral Studies Lab., 30.391703, -97.727042</item>
+        <item>BE2- Beg. Repository, 30.391106, -97.727256</item>
+        <item>BS1- OEHS Storage Bldg. A, 30.392439, -97.728050</item>
+        <item>BS2- OEHS Storage Bldg. B, 30.391995, -97.727951</item>
+        <item>BS3- Radioactive Materials STG., 30.392275, -97.728109</item>
+        <item>BS4- Hazard. Mtrls. Transfer Bldg G., 30.392772, -97.728450</item>
+        <item>CEER- Center for Energy and Environmental Resources, 30.390058, -97.727482</item>
+        <item>CEM- Center for Electromechanics, 30.389815, -97.727334</item>
+        <item>CM1- CMRG Chemical STG Bldg., 30.388454, -97.730172</item>
+        <item>CM2- CMRG Concrete Durabil. Ctr., 30.388753, -97.730113</item>
+        <item>CM3- CMRG-Const.Matrls.Res.Grp., 30.388647, -97.730153</item>
+        <item>CP1- PRC-CNTRL.Chilling Stn., 30.388660, -97.728316</item>
+        <item>CP3- Chilling Plant Insul. Shop, 30.388634, -97.726615</item>
+        <item>EM1- CES Boiler Bldg., 30.390427, -97.728021</item>
+        <item>EM3- CEM Explosives, 30.390582, -97.729026</item>
+        <item>EM4- CEER Haz. Material Storage, 30.389129, -97.728368</item>
+        <item>EM5- CEM Haz. Material Stor. 2, 30.389051, -97.728120</item>
+        <item>EME- Elec.Mech./Engr.Res.Ctr., 30.389657, -97.727541</item>
+        <item>ETS- UT Elec & Telecom Stg, 30.389527, -97.730330</item>
+        <item>P45- UT Physical Plant Warehouse, 30.389773, -97.730866</item>
+        <item>PC1- Comm Twr. & Mech. Room, 30.388795, -97.728953</item>
+        <item>PC2- DPS Twr. & Mech. Room, 30.391848, -97.728278</item>
+        <item>PT3- PRC Transformer House #3, 30.388308, -97.730216</item>
+        <item>T5A- Tarl Mod. Unit 5A-Gault, 30.388766, -97.730738</item>
+        <item>T5B- Tarl Mod. Unit 5B-Marl, 30.388596, -97.730811</item>
+        <item>T5C- Tarl Mod. Unit 5C- Office, 30.388428, -97.730881</item>
+        <item>TAR- Texas Archeological Res. Lab,30.388641, -97.731085</item>
+        <item>TM1- Non-Vet. Paleonthology Lab, 30.388796, -97.730396</item>
+        <item>VPL- Vertebrate Paleontology, 30.388660, -97.731469</item>
+        <item>CM4- CMRG- Research Offices, 30.387880, -97.730082</item>
+        <item>CMR- CMRG Concrete Durabil. CTR., 30.388056, -97.730377</item>
+        <item>FS1- Ferguson Engineering Lab Annex, 30.386917, -97.732094</item>
+        <item>FS2- NEES@utexas/FSL Lab Annex, 30.386311, -97.731815</item>
+        <item>FS3- Ferguson Lab Struct. Strg., 30.387264, -97.731782</item>
+        <item>G15- Guard Kiosk- South Gate, 30.384960, -97.732024</item>
+        <item>ME1- MER Support Bldg, 30.386580, -97.728258</item>
+        <item>MER- Microelect.& Eng.Res.CTR., 30.385955, -97.728065</item>
+        <item>P25- PRC Supply Center, 30.386700, -97.729283</item>
+        <item>P2A- Power Distribution House, 30.387204, -97.730001</item>
+        <item>P30- Recor. Strg. #1-Petex/K16c, 30.387204, -97.730731</item>
+        <item>P33- Recor. Strg. #2-Petex/ET.AL., 30.386589, -97.728859</item>
+        <item>PT1- PRC Transformer House #1, 30.387977, -97.729151</item>
+        <item>PT7- PRC Transformer House #7, 30.387410, -97.731723</item>
+        <item>PTV- KLRU-TV Satellite Station, 30.385123, -97.732778</item>
+        <item>PX3- Petex, 30.387441, -97.729977</item>
+        <item>T5D- Tarl Mod. Unit 5D- CLSRM, 30.388279, -97.731179</item>
+        <item>TM2- TMM & MSI Storage, 30.387664, -97.729199</item>
+        <item>TRR- Cntr. Transportation RES., 30.386208, -97.730621</item>
+        <item>BEG- BEG. Admin. Bldg., 30.390764, -97.725397</item>
+        <item>CW1- CTR Water Resources-Lab, 30.389107, -97.725612</item>
+        <item>CW2- Physical Modeling Bldg., 30.389149, -97.725843</item>
+        <item>CWR- CTR Water Resources-Admin, 30.389154, -97.725161</item>
+        <item>G13- Guard Kiosk- North Gate, 30.391905, -97.725918</item>
+        <item>NEA- Netl Annex, 30.390260, -97.723987</item>
+        <item>NEL- Nuclear Engr. Teaching Lab, 30.390641, -97.723971</item>
+        <item>PE1- Petroleum & Geosys. Engr., 30.386171, -97.727034</item>
+        <item>P19- PRC Custodial/Safety/Guards, 30.386583, -97.726151</item>
+        <item>P22- Pump House-Reservoir, 30.388459, -97.724960</item>
+        <item>P51- PRC Physical Plant Storage, 30.387971, -97.724582</item>
+        <item>PT6- PRC Transformer House #6, 30.389591, -97.725279</item>
+        <item>ROC- Research Office Complex, 30.390227, -97.725475</item>
+        <item>TCB- J. Neils Thompson Commons, 30.387321, -97.726559</item>
+        <item>VP1- Vert Paleontology Annex, 30.388506, -97.726291</item>
+        <item>VP2- Vert Paleontology Annex, 30.388471, -97.726191</item>
+        <item>A01- ARL Engr. Support Fac., 30.385024, -97.726368</item>
+        <item>A02- ARL Environmental Fac., 30.384510, -97.726073</item>
+        <item>A03- ARL Carpenter Shop, 30.383894, -97.726170</item>
+        <item>A04- ARL Security Guards, 30.385132, -97.725426</item>
+        <item>A05- ARL Storage/Warehouse, 30.383536, -97.726552</item>
+        <item>A06- ARL Warehouse, 30.383642, -97.726729</item>
+        <item>A08- ARL Storage Facility, 30.383916, -97.726851</item>
+        <item>A09- ARL Paint Storage, 30.383846, -97.726870</item>
+        <item>A10- ARL Storage Facility, 30.383900, -97.726753</item>
+        <item>A11- ARL Storage, 30.384574, -97.726899</item>
+        <item>A12- ARL Acoustic Res. Trailer, 30.384939, -97.725486</item>
+        <item>A15- ARL Special Projects Bldg., 30.384154, -97.726798</item>
+        <item>A16- ARL Storage, 30.384355, -97.725896</item>
+        <item>A17- ARL McKinney Wing, 30.384771, -97.724925</item>
+        <item>A18- ARL Assembly & Test. Bldg., 30.383374, -97.726213</item>
+        <item>A19- ARL Research Lab Trailer, 30.384040, -97.726519</item>
+        <item>A20- ARL Cooling Tower, 30.385393, -97.726553</item>
+        <item>A21- ARL Chemical Storage Bldg., 30.385489, -97.726543</item>
+        <item>AM2- ARL Modular Bldg. T-500, 30.384218, -97.726352</item>
+        <item>ARL- ARL Mai Building, 30.383982, -97.725102</item>
+        <item>AT1- ARL Trailer 3A, 30.384328, -97.726792</item>
+        <item>AT2- ARL Trailer 3B, 30.384283, -97.726808</item>
+        <item>AT3- ARL Trailer 2A, 30.384119, -97.726055</item>
+        <item>AT4- ARL Trailer 2B, 30.384082, -97.726072</item>
+        <item>AT5- ARL Trailer #1, 30.383362, -97.725165</item>
+        <item>EER- E.E.R.L/C.E.S.E, 30.386005, -97.726480</item>
+        <item>G14- Guard Kiosk- East Gate, 30.385970, -97.724897</item>
+        <item>HDR- Library High Density Repository, 30.383129, -97.727775</item>
+        <item>LSF- Library Storage Facility, 30.382948, -97.727287</item>
+        <item>ME1- MER Support Bldg., 30.386595, -97.728253</item>
+        <item>P15- PRC Physical Plant Admin., 30.385789, -97.725758</item>
+        <item>P99- PRC Phys.Plnt.Grd.Ma.Strg., 30.385400, -97.726288</item>
+        <item>PPG- Physical Plant Greenhouse, 30.381804, -97.725819</item>
+        <item>PT8, PRC Transformer House #8, 30.385763, -97.726449</item>
+        <item>SV1- PRC Service CTR Trades, 30.382250, -97.725671</item>
+        <item>SV2- PRC SVC.CTR./Auto & Grnds., 30.382246, -97.726218</item>
+        <item>SV3- Chemical Storage Bldg., 30.382759, -97.726894</item>
+    </string-array>
+    
+     <string-array 
+        name = "intramuralfields">
+        <item>Whitaker Tennis Courts 1-10, 30.315728, -97.726509</item>
+        <item>Whitaker Tennis Courts 11-20, 30.315107, -97.727174</item>
+        <item>Whitaker Tennis Courts 21-30, 30.315154, -97.726026</item>
+        <item>Whitaker Tennis Courts 31-40, 30.314561, -97.726713</item>
     </string-array>
     
 </resources>
