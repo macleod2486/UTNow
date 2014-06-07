@@ -24,8 +24,8 @@ package com.macleod2486.utnow;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,7 +39,7 @@ import com.macleod2486.fragment.Main;
 import com.macleod2486.fragment.Map;
 import com.macleod2486.fragment.UTWebView;
 
-public class MainActivity extends FragmentActivity
+public class MainActivity extends ActionBarActivity
 {
 	private DrawerLayout drawer;
 	private ActionBarDrawerToggle drawerToggle;
@@ -129,8 +129,8 @@ public class MainActivity extends FragmentActivity
 		direct.loadUrl(directUrl, false);
 		main.loadUrl(calenderUrl);
 		
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setHomeButtonEnabled(true);
 		
 		getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
 	}
