@@ -280,10 +280,10 @@
         <item>EM4- CEER Haz. Material Storage, 30.389129, -97.728368</item>
         <item>EM5- CEM Haz. Material Stor. 2, 30.389051, -97.728120</item>
         <item>EME- Elec.Mech./Engr.Res.Ctr., 30.389657, -97.727541</item>
-        <item>ETS- UT Elec & Telecom Stg, 30.389527, -97.730330</item>
+        <item>ETS- UT Elec and Telecom Stg, 30.389527, -97.730330</item>
         <item>P45- UT Physical Plant Warehouse, 30.389773, -97.730866</item>
-        <item>PC1- Comm Twr. & Mech. Room, 30.388795, -97.728953</item>
-        <item>PC2- DPS Twr. & Mech. Room, 30.391848, -97.728278</item>
+        <item>PC1- Comm Twr. and Mech. Room, 30.388795, -97.728953</item>
+        <item>PC2- DPS Twr. and Mech. Room, 30.391848, -97.728278</item>
         <item>PT3- PRC Transformer House #3, 30.388308, -97.730216</item>
         <item>T5A- Tarl Mod. Unit 5A-Gault, 30.388766, -97.730738</item>
         <item>T5B- Tarl Mod. Unit 5B-Marl, 30.388596, -97.730811</item>
@@ -298,7 +298,7 @@
         <item>FS3- Ferguson Lab Struct. Strg., 30.387264, -97.731782</item>
         <item>G15- Guard Kiosk- South Gate, 30.384960, -97.732024</item>
         <item>ME1- MER Support Bldg, 30.386580, -97.728258</item>
-        <item>MER- Microelect.& Eng.Res.CTR., 30.385955, -97.728065</item>
+        <item>MER- Microelect.and Eng.Res.CTR., 30.385955, -97.728065</item>
         <item>P25- PRC Supply Center, 30.386700, -97.729283</item>
         <item>P2A- Power Distribution House, 30.387204, -97.730001</item>
         <item>P30- Recor. Strg. #1-Petex/K16c, 30.387204, -97.730731</item>
@@ -308,7 +308,7 @@
         <item>PTV- KLRU-TV Satellite Station, 30.385123, -97.732778</item>
         <item>PX3- Petex, 30.387441, -97.729977</item>
         <item>T5D- Tarl Mod. Unit 5D- CLSRM, 30.388279, -97.731179</item>
-        <item>TM2- TMM & MSI Storage, 30.387664, -97.729199</item>
+        <item>TM2- TMM and MSI Storage, 30.387664, -97.729199</item>
         <item>TRR- Cntr. Transportation RES., 30.386208, -97.730621</item>
         <item>BEG- BEG. Admin. Bldg., 30.390764, -97.725397</item>
         <item>CW1- CTR Water Resources-Lab, 30.389107, -97.725612</item>
@@ -317,7 +317,7 @@
         <item>G13- Guard Kiosk- North Gate, 30.391905, -97.725918</item>
         <item>NEA- Netl Annex, 30.390260, -97.723987</item>
         <item>NEL- Nuclear Engr. Teaching Lab, 30.390641, -97.723971</item>
-        <item>PE1- Petroleum & Geosys. Engr., 30.386171, -97.727034</item>
+        <item>PE1- Petroleum and Geosys. Engr., 30.386171, -97.727034</item>
         <item>P19- PRC Custodial/Safety/Guards, 30.386583, -97.726151</item>
         <item>P22- Pump House-Reservoir, 30.388459, -97.724960</item>
         <item>P51- PRC Physical Plant Storage, 30.387971, -97.724582</item>
@@ -340,7 +340,7 @@
         <item>A15- ARL Special Projects Bldg., 30.384154, -97.726798</item>
         <item>A16- ARL Storage, 30.384355, -97.725896</item>
         <item>A17- ARL McKinney Wing, 30.384771, -97.724925</item>
-        <item>A18- ARL Assembly & Test. Bldg., 30.383374, -97.726213</item>
+        <item>A18- ARL Assembly and Test. Bldg., 30.383374, -97.726213</item>
         <item>A19- ARL Research Lab Trailer, 30.384040, -97.726519</item>
         <item>A20- ARL Cooling Tower, 30.385393, -97.726553</item>
         <item>A21- ARL Chemical Storage Bldg., 30.385489, -97.726543</item>
@@ -361,7 +361,7 @@
         <item>PPG- Physical Plant Greenhouse, 30.381804, -97.725819</item>
         <item>PT8, PRC Transformer House #8, 30.385763, -97.726449</item>
         <item>SV1- PRC Service CTR Trades, 30.382250, -97.725671</item>
-        <item>SV2- PRC SVC.CTR./Auto & Grnds., 30.382246, -97.726218</item>
+        <item>SV2- PRC SVC.CTR./Auto and Grnds., 30.382246, -97.726218</item>
         <item>SV3- Chemical Storage Bldg., 30.382759, -97.726894</item>
     </string-array>
     
