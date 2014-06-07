@@ -25,6 +25,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -39,11 +45,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.macleod2486.utnow.R;
 
 public class Map extends Fragment 
@@ -65,6 +66,10 @@ public class Map extends Fragment
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.maincampus)));
+		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.intramuralfields)));
+		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.pickleresearchcampus)));
+		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.parkinggarages)));
+		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.residencehalls)));
 		Collections.sort(buildingList,String.CASE_INSENSITIVE_ORDER);
 		
 		//Only puts the building name for the autocomplete text
@@ -94,6 +99,9 @@ public class Map extends Fragment
 		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
 		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
 		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.maincampus)));
+		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.pickleresearchcampus)));
+				completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.parkinggarages)));
+				completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.residencehalls)));
 		    	Collections.sort(completeList,String.CASE_INSENSITIVE_ORDER);
 		    	
 		    	latitude = completeList.get(buildingList.indexOf(selection));
