@@ -19,6 +19,7 @@
 	           android:layout_height="match_parent"
 	           android:layout_width="240dp"
 	           android:layout_gravity="left"
+	           android:background="#BF5700"
 	           android:id="@+id/optionList"/>
 	</android.support.v4.widget.DrawerLayout>
 </RelativeLayout>

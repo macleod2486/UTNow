@@ -22,6 +22,8 @@
 package com.macleod2486.utnow;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -80,13 +82,13 @@ public class MainActivity extends ActionBarActivity
 		{
 			public void onDrawerClosed(View view)
 			{
-				getActionBar().setTitle(R.string.drawer_close);
+				getSupportActionBar().setTitle(R.string.drawer_close);
 				super.onDrawerClosed(view);
 			}
 			
 			public void onDrawerOpened(View drawerView)
 			{
-				getActionBar().setTitle(R.string.drawer_open);
+				getSupportActionBar().setTitle(R.string.drawer_open);
 				super.onDrawerOpened(drawerView);
 			}
 		};
@@ -97,7 +99,8 @@ public class MainActivity extends ActionBarActivity
 		String [] menuList = getResources().getStringArray(R.array.list);
 		ListView list = (ListView)findViewById(R.id.optionList);
 		list.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, menuList));
-		list.setOnItemClickListener(new OnItemClickListener(){
+		list.setOnItemClickListener(new OnItemClickListener()
+		{
 			@Override
 			public void onItemClick(AdapterView parent, View view, int position, long id)
 			{
@@ -129,9 +132,14 @@ public class MainActivity extends ActionBarActivity
 		direct.loadUrl(directUrl, false);
 		main.loadUrl(calenderUrl);
 		
+		//Make the actionbar clickable to bring out the drawer
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
 		
+		//Styling
+		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#BF5700")));
+		
+		//Displays the first fragment
 		getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
 	}
 	
