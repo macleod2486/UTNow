@@ -5,7 +5,7 @@
     >
     <AutoCompleteTextView 
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:id="@+id/mapSearch"/>
 
     <fragment
@@ -16,5 +16,14 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/mapSearch" />
+
+    <ImageButton
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/clear"
+        android:visibility="invisible" />
     
 </RelativeLayout>

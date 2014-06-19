@@ -36,14 +36,18 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 
 import com.macleod2486.utnow.R;
 
@@ -51,6 +55,7 @@ public class Map extends Fragment
 {
 	private GoogleMap UT;
 	private AutoCompleteTextView search;
+	private ImageButton clear;
 	
 	private LatLng UTLoc= new LatLng(30.284961, -97.734113);
 	
@@ -94,6 +99,7 @@ public class Map extends Fragment
 				String selection = (String)parent.getItemAtPosition(position);
 				String latitude;
 				String longitude;
+				
 				//Array with complete coordinates
 		    	ArrayList <String> completeList = new ArrayList <String>();
 		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
@@ -120,6 +126,42 @@ public class Map extends Fragment
 		        Log.i("Map","Selected index "+completeList.get(buildingList.indexOf(selection)));
 		    }
 		});
+		search.addTextChangedListener(new TextWatcher()
+		{
+			@Override
+			public void afterTextChanged(Editable arg0) 
+			{
+				Log.i("Map","Text changed");
+				clear.setVisibility(View.VISIBLE);
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence arg0, int arg1,
+					int arg2, int arg3) 
+			{
+				
+			}
+
+			@Override
+			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
+					int arg3) 
+			{
+				
+			}
+		});
+
+		clear = (ImageButton)view.findViewById(R.id.clearButton);
+		clear.setOnClickListener(new OnClickListener()
+		{
+
+			@Override
+			public void onClick(View arg0) 
+			{
+				search.setText("");
+				clear.setVisibility(View.INVISIBLE);
+			}
+			
+		});
 		
 		return view;
 	}
@@ -135,6 +177,7 @@ public class Map extends Fragment
 	public void onDestroyView()
 	{
 		Log.i("Google","Destroy view called");
+		
 		super.onDestroyView();
 		
 		try
@@ -149,6 +192,7 @@ public class Map extends Fragment
 		{
 			Log.i("Google","Error in destroying UT "+e);
 		}
+		
 		Log.i("Google","On destroy complete!");
 	}
 	
