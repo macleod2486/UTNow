@@ -22,8 +22,6 @@
 package com.macleod2486.utnow;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -135,9 +133,6 @@ public class MainActivity extends ActionBarActivity
 		//Make the actionbar clickable to bring out the drawer
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
-		
-		//Styling
-		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#BF5700")));
 		
 		//Displays the first fragment
 		getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
