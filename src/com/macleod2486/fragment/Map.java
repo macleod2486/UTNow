@@ -31,6 +31,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -43,6 +44,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -60,6 +62,8 @@ public class Map extends Fragment
 	private LatLng UTLoc= new LatLng(30.284961, -97.734113);
 	
 	private ArrayList <String> buildingList = new ArrayList <String>();
+	
+	private InputMethodManager imm;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -122,8 +126,8 @@ public class Map extends Fragment
 				UT.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(selection));
 				UT.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lon), 17));
 		        
-		        Log.i("Map","Selected "+search.getText()+selection);
-		        Log.i("Map","Selected index "+completeList.get(buildingList.indexOf(selection)));
+				imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+				imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
 		    }
 		});
 		search.addTextChangedListener(new TextWatcher()
@@ -192,6 +196,9 @@ public class Map extends Fragment
 		{
 			Log.i("Google","Error in destroying UT "+e);
 		}
+		
+		imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
 		
 		Log.i("Google","On destroy complete!");
 	}

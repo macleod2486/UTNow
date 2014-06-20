@@ -21,6 +21,7 @@
 */
 package com.macleod2486.utnow;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -29,10 +30,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
 
 import com.macleod2486.fragment.Main;
@@ -87,6 +90,20 @@ public class MainActivity extends ActionBarActivity
 			public void onDrawerOpened(View drawerView)
 			{
 				getSupportActionBar().setTitle(R.string.drawer_open);
+				
+				if(index == 1)
+				{
+					WebView webfrag = (WebView)findViewById(R.id.webView);
+					InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+					imm.hideSoftInputFromWindow(webfrag.getWindowToken(), 0);
+				}
+				if(index == 2)
+				{
+					AutoCompleteTextView search = (AutoCompleteTextView)findViewById(R.id.mapSearch);
+					InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+					imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
+				}
+					
 				super.onDrawerOpened(drawerView);
 			}
 		};
