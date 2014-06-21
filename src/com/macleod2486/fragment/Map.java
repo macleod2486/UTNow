@@ -135,8 +135,10 @@ public class Map extends Fragment
 			@Override
 			public void afterTextChanged(Editable arg0) 
 			{
-				Log.i("Map","Text changed");
-				clear.setVisibility(View.VISIBLE);
+				if(arg0.toString().isEmpty())
+				{
+					clear.setVisibility(View.INVISIBLE);
+				}
 			}
 
 			@Override
@@ -150,7 +152,8 @@ public class Map extends Fragment
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
 					int arg3) 
 			{
-				
+				Log.i("Map","Text changed");
+				clear.setVisibility(View.VISIBLE);
 			}
 		});
 
