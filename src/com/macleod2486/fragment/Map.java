@@ -65,6 +65,8 @@ public class Map extends Fragment
 	
 	private InputMethodManager imm;
 	
+	private int currentMode;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
@@ -170,6 +172,9 @@ public class Map extends Fragment
 			
 		});
 		
+		//Sets up the map
+		setUpUT();
+		
 		return view;
 	}
 	
@@ -177,7 +182,15 @@ public class Map extends Fragment
 	public void onStart()
 	{
 		super.onStart();
-		setUpUT();
+		
+		SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(getActivity());
+		String UTSel = shared.getString("maptype", "4");
+		
+		if(Integer.parseInt(UTSel) != this.currentMode)
+		{
+			this.currentMode = Integer.parseInt(UTSel);
+			UT.setMapType(currentMode);
+		}
 	}
 	
 	@Override
@@ -213,7 +226,7 @@ public class Map extends Fragment
 		
 		SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(getActivity());
 		
-		String UTSel = shared.getString("maptype", "1");
+		String UTSel = shared.getString("maptype", "4");
 		
 		if(UT==null)
 		{
@@ -222,31 +235,21 @@ public class Map extends Fragment
 		}
 		if(UT!=null)
 		{
+			this.currentMode = Integer.parseInt(UTSel);
+			
 			UT=((SupportMapFragment)getFragmentManager().findFragmentById(R.id.google_map)).getMap();
 			
 			//Sets the options for the user to show their current location
 			UT.setMyLocationEnabled(true);
 			
+			//Sets the camera view as determined by the users settings
+			UT.setMapType(currentMode);
+			
 			UT.animateCamera(CameraUpdateFactory.newLatLngZoom(UTLoc, 16));
 			
-			//Sets the camera view as determined by the users settings
-			if(UTSel.contains("1"))
-			{	
-				UT.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-			}
-			else if(UTSel.contains("2"))
-			{	
-				UT.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-			}
-			else if(UTSel.contains("3"))
-			{	
-				UT.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-			}
-			else if(UTSel.contains("4"))
-			{
-				UT.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-			}
-			Log.i("Google","UT setting set");
+			Log.i("Google","UT setting set "+UTSel+" "+UT.getMapType());
+			Log.i("Google","Hybrid "+GoogleMap.MAP_TYPE_HYBRID+" Satellite "+GoogleMap.MAP_TYPE_SATELLITE);
+			Log.i("Google","Terrain "+GoogleMap.MAP_TYPE_TERRAIN+" Normal "+GoogleMap.MAP_TYPE_NORMAL);
 		}
 	}
 }
