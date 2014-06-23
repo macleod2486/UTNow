@@ -248,8 +248,6 @@ public class Map extends Fragment
 			UT.animateCamera(CameraUpdateFactory.newLatLngZoom(UTLoc, 16));
 			
 			Log.i("Google","UT setting set "+UTSel+" "+UT.getMapType());
-			Log.i("Google","Hybrid "+GoogleMap.MAP_TYPE_HYBRID+" Satellite "+GoogleMap.MAP_TYPE_SATELLITE);
-			Log.i("Google","Terrain "+GoogleMap.MAP_TYPE_TERRAIN+" Normal "+GoogleMap.MAP_TYPE_NORMAL);
 		}
 	}
 }
