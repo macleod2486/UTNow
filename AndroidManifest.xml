@@ -56,7 +56,7 @@
             android:enabled="true"
         />
             
-        <receiver android:name="BroadcastNews"/>
+        <receiver android:name="UTBroadcast"/>
         
         
     </application>

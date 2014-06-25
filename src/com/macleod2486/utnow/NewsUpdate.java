@@ -56,7 +56,7 @@ public class NewsUpdate extends IntentService
 		Update checkNew = new Update();
 		checkNew.execute(1);
 		
-		Log.i("Service","It works!");
+		Log.i("UTService","It works!");
 	}
 
 	//Async task that checks for the update
@@ -139,14 +139,14 @@ public class NewsUpdate extends IntentService
 				for(Element Division :second)
 				{
 					fw.append(Division.toString()+"\n");
-					Log.i("Service","Found "+Division.toString());
+					Log.i("UTService","Found "+Division.toString());
 				}
 				fw.close();
-				Log.i("Service","Completed creating file");
+				Log.i("UTService","Completed creating file");
 			}
 			catch(Exception e)
 			{
-				Log.i("Service","Error "+e);
+				Log.i("UTService","Error "+e);
 			}
 		}
 		
@@ -203,7 +203,7 @@ public class NewsUpdate extends IntentService
 			}
 			catch(Exception e)
 			{
-				Log.i("Service","Error "+e);
+				Log.i("UTService","Error "+e);
 			}
 		
 		}
@@ -215,7 +215,7 @@ public class NewsUpdate extends IntentService
 			try
 			{	
 				Scanner temp = new Scanner(data);
-				Log.i("Service","Checking the file");
+				Log.i("UTService","Checking the file");
 				
 				checkNull=temp.hasNext();
 				
@@ -227,7 +227,7 @@ public class NewsUpdate extends IntentService
 			}
 			catch(Exception e)
 			{
-				Log.i("Service","IsFileNull error "+e);
+				Log.i("UTService","IsFileNull error "+e);
 				checkNull=true;
 			}
 			

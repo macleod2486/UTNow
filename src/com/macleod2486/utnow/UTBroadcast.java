@@ -26,7 +26,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-public class BroadcastNews extends BroadcastReceiver 
+public class UTBroadcast extends BroadcastReceiver 
 {
 
 	@Override
