@@ -21,17 +21,22 @@
 */
 package com.macleod2486.utnow;
 
-import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 
-public class Preference extends PreferenceActivity
+public class BroadcastNews extends BroadcastReceiver 
 {
-	@SuppressWarnings("deprecation")
+
 	@Override
-	public void onCreate(Bundle savedInstanceState)
+	public void onReceive(Context arg0, Intent arg1) 
 	{
-		super.onCreate(savedInstanceState);
-		addPreferencesFromResource(R.xml.settings);
+		Log.i("UTBroadcast","Broadcast recieved");
+		
+		//Starting the news update class
+		Intent newsUpdate = new Intent(arg0,NewsUpdate.class);
+		arg0.startService(newsUpdate); 
 	}
-	
+
 }

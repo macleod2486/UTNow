@@ -50,6 +50,15 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDxEpmbhqx7pWhOGYyxhU1AYYsbCK7rkXs"/>
         
+        <service
+            android:name="NewsUpdate"
+            android:label="UTNews"
+            android:enabled="true"
+        />
+            
+        <receiver android:name="BroadcastNews"/>
+        
+        
     </application>
 
 </manifest>

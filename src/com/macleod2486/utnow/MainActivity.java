@@ -21,9 +21,13 @@
 */
 package com.macleod2486.utnow;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -153,6 +157,32 @@ public class MainActivity extends ActionBarActivity
 		
 		//Displays the first fragment
 		getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
+	}
+	
+	@Override
+	public void onStop()
+	{
+		//Start the service in a timely interval
+		SharedPreferences shared = PreferenceManager.getDefaultSharedPreferences(this);
+		
+		if(shared.getBoolean("notification", false) && shared.getBoolean("notifCancel", true))
+		{
+			//one second * 60 seconds in a minute * 5
+			int fiveMinutes = 1000*60*5;
+			
+			//Start the alarm manager service
+			SharedPreferences.Editor edit = shared.edit();
+			Intent service = new Intent(getApplicationContext(),BroadcastNews.class);
+			PendingIntent pendingService = PendingIntent.getBroadcast(getApplicationContext(),0,service,0);
+			AlarmManager newsUpdate = (AlarmManager)getSystemService(ALARM_SERVICE);
+			
+			//Check for the update every 5 minutes
+			newsUpdate.setRepeating(AlarmManager.RTC, System.currentTimeMillis(), fiveMinutes, pendingService);
+			edit.putBoolean("notifCancel", false).commit();
+			Log.i("UTService","Alarm set "+shared.getBoolean("notification", true));
+		}
+		
+		super.onStop();
 	}
 	
 	@Override
