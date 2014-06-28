@@ -66,7 +66,6 @@ public class MainActivity extends ActionBarActivity
 	{
 		if(index == 0 && !main.isAdded())
 		{
-			Log.i("Main","Is added");
 			getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
 		}
 		else

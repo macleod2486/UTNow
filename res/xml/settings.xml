@@ -1,18 +1,25 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListPreference
-            android:key = "maptype"
-            android:title = "Map Type"
-            android:defaultValue = "4"
-            android:entryValues="@array/selection"
-            android:entries="@array/maptypes"
-            >
-    </ListPreference>
+    <PreferenceCategory
+        android:title="Map"
+        >
+	    <ListPreference
+	            android:key = "maptype"
+	            android:title = "Map Type"
+	            android:defaultValue = "4"
+	            android:entryValues="@array/selection"
+	            android:entries="@array/maptypes"
+	            >
+	    </ListPreference>
+    </PreferenceCategory>
     
-    <CheckBoxPreference
-        android:key="notification"
-        android:title="News update"
-        android:defaultValue="true">
-    </CheckBoxPreference>
+    <PreferenceCategory 
+        android:title="Notification">
+	    <CheckBoxPreference
+	        android:key="notification"
+	        android:title="News update"
+	        android:defaultValue="true">
+	    </CheckBoxPreference>
+    </PreferenceCategory>
     
 </PreferenceScreen>
