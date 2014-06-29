@@ -27,12 +27,16 @@ import java.util.Collections;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
@@ -62,10 +66,14 @@ public class Map extends Fragment
 	private LatLng UTLoc= new LatLng(30.284961, -97.734113);
 	
 	private ArrayList <String> buildingList = new ArrayList <String>();
+	private ArrayList <String> completeList = new ArrayList <String>();
 	
 	private InputMethodManager imm;
 	
+	private String latitude;
+	private String longitude;
 	private int currentMode;
+	private int navigate;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -82,6 +90,14 @@ public class Map extends Fragment
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.parkinggarages)));
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.residencehalls)));
 		Collections.sort(buildingList,String.CASE_INSENSITIVE_ORDER);
+		
+		completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
+    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
+    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.maincampus)));
+    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.pickleresearchcampus)));
+		completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.parkinggarages)));
+		completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.residencehalls)));
+    	Collections.sort(completeList,String.CASE_INSENSITIVE_ORDER);
 		
 		//Only puts the building name for the autocomplete text
 		for(int index = 0; index < buildingList.size(); index ++)
@@ -103,18 +119,6 @@ public class Map extends Fragment
 				Double lon;
 				
 				String selection = (String)parent.getItemAtPosition(position);
-				String latitude;
-				String longitude;
-				
-				//Array with complete coordinates
-		    	ArrayList <String> completeList = new ArrayList <String>();
-		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
-		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
-		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.maincampus)));
-		    	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.pickleresearchcampus)));
-				completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.parkinggarages)));
-				completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.residencehalls)));
-		    	Collections.sort(completeList,String.CASE_INSENSITIVE_ORDER);
 		    	
 		    	latitude = completeList.get(buildingList.indexOf(selection));
 		    	latitude = latitude.substring(latitude.indexOf(",")+1,latitude.lastIndexOf(","));
@@ -123,10 +127,30 @@ public class Map extends Fragment
 		    	
 		    	lat = Double.parseDouble(latitude);
 		    	lon = Double.parseDouble(longitude);
+		    	navigate = 0;
 		    	
 		    	UT.clear();
 				UT.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(selection));
 				UT.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lon), 17));
+				UT.setOnMarkerClickListener(new OnMarkerClickListener()
+				{
+					@Override
+					public boolean onMarkerClick(Marker marker) 
+					{
+						Log.i("Map","Marker clicked");
+						navigate++;
+						//If the marker is clicked twice it launches navigation
+						if(navigate == 2)
+						{
+							String url = "http://maps.google.com/maps?f=d&daddr="+latitude+","+longitude+"&dirflg=d";
+							Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(url)); 
+							intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+							startActivity(intent);
+						}
+						return false;
+					}
+					
+				});
 		        
 				imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
 				imm.hideSoftInputFromWindow(search.getWindowToken(), 0);
