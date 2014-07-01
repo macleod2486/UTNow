@@ -74,6 +74,7 @@ public class Map extends Fragment
 	private String longitude;
 	private int currentMode;
 	private int navigate;
+	private boolean navigated = false;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -91,6 +92,7 @@ public class Map extends Fragment
 		buildingList.addAll(Arrays.asList(getResources().getStringArray(R.array.residencehalls)));
 		Collections.sort(buildingList,String.CASE_INSENSITIVE_ORDER);
 		
+		completeList.clear();
 		completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.fraternity)));
     	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.sorority)));
     	completeList.addAll(Arrays.asList(getResources().getStringArray(R.array.maincampus)));
@@ -115,10 +117,10 @@ public class Map extends Fragment
 			
 		    public void onItemClick(AdapterView<?> parent, View view, int position, long rowId)
 		    {
-		    	Double lat;
-				Double lon;
+		    	final Double lat;
+				final Double lon;
 				
-				String selection = (String)parent.getItemAtPosition(position);
+				final String selection = (String)parent.getItemAtPosition(position);
 		    	
 		    	latitude = completeList.get(buildingList.indexOf(selection));
 		    	latitude = latitude.substring(latitude.indexOf(",")+1,latitude.lastIndexOf(","));
@@ -129,8 +131,12 @@ public class Map extends Fragment
 		    	lon = Double.parseDouble(longitude);
 		    	navigate = 0;
 		    	
+		    	final MarkerOptions markerOpt = new MarkerOptions();
+		    	markerOpt.position(new LatLng(lat,lon)).title(selection);
+		    	markerOpt.snippet("Touch marker twice to navigate");
+		    	
 		    	UT.clear();
-				UT.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(selection));
+				UT.addMarker(markerOpt);
 				UT.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lon), 17));
 				UT.setOnMarkerClickListener(new OnMarkerClickListener()
 				{
@@ -138,10 +144,14 @@ public class Map extends Fragment
 					public boolean onMarkerClick(Marker marker) 
 					{
 						Log.i("Map","Marker clicked");
+						
 						navigate++;
+						
 						//If the marker is clicked twice it launches navigation
 						if(navigate == 2)
 						{
+							navigate = 0;
+							
 							String url = "http://maps.google.com/maps?f=d&daddr="+latitude+","+longitude+"&dirflg=d";
 							Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(url)); 
 							intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
