@@ -74,7 +74,6 @@ public class Map extends Fragment
 	private String longitude;
 	private int currentMode;
 	private int navigate;
-	private boolean navigated = false;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
