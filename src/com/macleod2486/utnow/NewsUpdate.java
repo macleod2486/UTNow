@@ -20,18 +20,15 @@
 *
 */
 package com.macleod2486.utnow;
-//Java Imports
+
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-//JSoup imports
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-//Android imports
 import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -48,39 +45,32 @@ public class NewsUpdate extends IntentService
 	{
 		super("NewsUpdate");
 	}
-
 	
 	@Override
 	protected void onHandleIntent(Intent intent) 
 	{
 		Update checkNew = new Update();
-		checkNew.execute(1);
+		checkNew.execute();
 		
 		Log.i("UTService","It works!");
 	}
 
 	//Async task that checks for the update
-	private class Update extends AsyncTask<Integer, Void, Void>
+	private class Update extends AsyncTask<Void, Void, Void>
 	{
-		int pointer = 0;
-		boolean different;
-		String Sync[]=new String[30];
+		private boolean different;
 		
-		//Two 
 		Notification notifi;
 		NotificationManager notifiManage = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 		
 		//Will read from the file that is created
-		File filePath = getBaseContext().getCacheDir();
-		String path = filePath.toString();
-		File data = new File(path+"/news.txt");
+		File data = new File(getBaseContext().getCacheDir().toString()+"/news.txt");
 		
 		boolean updated = false;
 		
-		
 		//Executes the following in the background
 		@Override
-		protected Void doInBackground(Integer...go)
+		protected Void doInBackground(Void...go)
 		{
 			Log.i("UTService","Checking for updates");
 			//checks to see if the temp file needs to be created
@@ -89,9 +79,9 @@ public class NewsUpdate extends IntentService
 			//Checks to see if the file is there
 			isFileEmpty=isFileNull();
 			
-			Log.i("String","File path "+path);
+			Log.i("String","File path "+getBaseContext().getCacheDir().toString()+"/news.txt");
 			
-			if(isFileEmpty)
+			if(!isFileEmpty)
 			{
 				Log.i("UTService","File was empty");
 				createFile();
@@ -104,7 +94,6 @@ public class NewsUpdate extends IntentService
 		
 			return null;
 		}
-		
 		
 		@SuppressWarnings("deprecation")
 		
@@ -119,34 +108,29 @@ public class NewsUpdate extends IntentService
 				notifi= new Notification(R.drawable.ic_launcher,"UTNow",System.currentTimeMillis());
 				notifi.setLatestEventInfo(getApplicationContext(), "UTNow", "New Events!", homePending);
 				notifi.flags = Notification.FLAG_AUTO_CANCEL;
-				notifiManage.notify(0,notifi);				
+				notifiManage.notify(0,notifi);
 			}
 		}
 		
 		//Creates the file if the file is found to be empty
 		private void createFile()
 		{
-			
 			try
 			{
 				FileWriter fw = new FileWriter(data);
 				String calenderUrl = "http://www.utexas.edu/";
 				Document connect = Jsoup.connect(calenderUrl).get();
 				Elements first = connect.select("div.itemlist");
-				Elements second = first.select("a[href]");
 				
 				fw.write("");
-				for(Element Division :second)
-				{
-					fw.append(Division.toString()+"\n");
-					Log.i("UTService","Found "+Division.toString());
-				}
+				fw.write(first.toString());
 				fw.close();
+				
 				Log.i("UTService","Completed creating file");
 			}
 			catch(Exception e)
 			{
-				Log.i("UTService","Error "+e);
+				Log.i("UTService","Create File Error "+e);
 			}
 		}
 		
@@ -156,27 +140,23 @@ public class NewsUpdate extends IntentService
 			String calenderUrl;
 			Document connect;
 			Elements first;
-			Elements second;
 			Scanner updateScan;
 			FileWriter fw;
+			
 			try
 			{
 				updateScan = new Scanner(data);
+				updateScan.useDelimiter("\\A");
+				
+				String temp = updateScan.next();
 				
 				calenderUrl = "http://www.utexas.edu/";
 				connect = Jsoup.connect(calenderUrl).get();
 				first = connect.select("div.itemlist");
-				second = first.select("a[href]");
 				
-				for(Element Division :second)
-				{
-					if(!updateScan.nextLine().contains(Division.toString()))
-						different=true;
-					Sync[pointer]=Division.toString();
-					pointer++;
-				}
+				if(!first.toString().equals(temp))
+						different = true;
 				
-				//Closes the scanner
 				updateScan.close();
 				
 				//If there is a difference then the file is updated
@@ -184,15 +164,11 @@ public class NewsUpdate extends IntentService
 				{
 					fw=new FileWriter(data);
 					fw.write("");
-					for(int start=0; start<pointer; start++)
-					{
-						fw.append(Sync[start]+"\n");
-					}
-					
-					//Closes file
-					
+					fw.write(temp);
 					fw.close();
+					
 					Log.i("UTService","New updates found!");
+					
 					updated=true;
 				}
 				else
@@ -203,38 +179,29 @@ public class NewsUpdate extends IntentService
 			}
 			catch(Exception e)
 			{
-				Log.i("UTService","Error "+e);
+				Log.i("UTService","Getupdate Error "+e);
 			}
-		
 		}
 		
 		//Checks to see if the file is new or is empty
 		private boolean isFileNull()
 		{
-			boolean checkNull;
+			boolean checkNull = true;
 			try
 			{	
 				Scanner temp = new Scanner(data);
 				Log.i("UTService","Checking the file");
 				
-				checkNull=temp.hasNext();
-				
-				if(temp.hasNext())
-					checkNull=false;
-				else
-					checkNull=true;
+				checkNull = temp.hasNext();
 				temp.close();
 			}
 			catch(Exception e)
 			{
 				Log.i("UTService","IsFileNull error "+e);
-				checkNull=true;
+				checkNull=false;
 			}
 			
 			return checkNull;
 		}
-			
 	}
-
-	
 }
