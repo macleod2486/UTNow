@@ -167,7 +167,7 @@ public class MainActivity extends ActionBarActivity
 		if(shared.getBoolean("notification", false) && shared.getBoolean("notifCancel", true))
 		{
 			//one second * 60 seconds in a minute * 5
-			int fiveMinutes = 1000*60*5;
+			long fiveMinutes = 1000*60*5;
 			
 			//Start the alarm manager service
 			SharedPreferences.Editor edit = shared.edit();
