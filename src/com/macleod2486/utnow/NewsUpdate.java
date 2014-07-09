@@ -52,7 +52,7 @@ public class NewsUpdate extends IntentService
 		Update checkNew = new Update();
 		checkNew.execute();
 		
-		Log.i("UTService","It works!");
+		Log.i("UTService","Started");
 	}
 
 	//Async task that checks for the update
