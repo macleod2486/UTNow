@@ -59,14 +59,10 @@ public class NewsUpdate extends IntentService
 	private class Update extends AsyncTask<Void, Void, Void>
 	{
 		private boolean different;
-		
-		Notification notifi;
-		NotificationManager notifiManage = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+		private boolean updated = false;
 		
 		//Will read from the file that is created
 		File data = new File(getBaseContext().getCacheDir().toString()+"/news.txt");
-		
-		boolean updated = false;
 		
 		//Executes the following in the background
 		@Override
@@ -103,11 +99,15 @@ public class NewsUpdate extends IntentService
 		{
 			if(updated)
 			{
+				Notification notifi;
+				NotificationManager notifiManage = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
 				Intent homeIntent = new Intent(getBaseContext(),MainActivity.class);
-				PendingIntent homePending = PendingIntent.getActivity(getBaseContext(), 0,homeIntent, 0);
-				notifi= new Notification(R.drawable.ic_launcher,"UTNow",System.currentTimeMillis());
+				PendingIntent homePending = PendingIntent.getActivity(getBaseContext(), 0, homeIntent, 0);
+				
+				notifi = new Notification(R.drawable.ic_launcher,"UTNow",System.currentTimeMillis());
 				notifi.setLatestEventInfo(getApplicationContext(), "UTNow", "New Events!", homePending);
 				notifi.flags = Notification.FLAG_AUTO_CANCEL;
+				
 				notifiManage.notify(0,notifi);
 			}
 		}
@@ -121,9 +121,10 @@ public class NewsUpdate extends IntentService
 				String calenderUrl = "http://www.utexas.edu/";
 				Document connect = Jsoup.connect(calenderUrl).get();
 				Elements first = connect.select("div.itemlist");
+				Elements second = first.select("a[href]");;
 				
 				fw.write("");
-				fw.write(first.toString());
+				fw.write(second.toString());
 				fw.close();
 				
 				Log.i("UTService","Completed creating file");
@@ -140,6 +141,7 @@ public class NewsUpdate extends IntentService
 			String calenderUrl;
 			Document connect;
 			Elements first;
+			Elements second;
 			Scanner updateScan;
 			FileWriter fw;
 			
@@ -153,8 +155,9 @@ public class NewsUpdate extends IntentService
 				calenderUrl = "http://www.utexas.edu/";
 				connect = Jsoup.connect(calenderUrl).get();
 				first = connect.select("div.itemlist");
+				second = first.select("a[href]");
 				
-				if(!first.toString().equals(temp))
+				if(!second.toString().equals(temp))
 						different = true;
 				
 				updateScan.close();
@@ -162,14 +165,15 @@ public class NewsUpdate extends IntentService
 				//If there is a difference then the file is updated
 				if(different)
 				{
-					fw=new FileWriter(data);
+					fw = new FileWriter(data);
+					
 					fw.write("");
-					fw.write(temp);
+					fw.write(second.toString());
 					fw.close();
 					
 					Log.i("UTService","New updates found!");
 					
-					updated=true;
+					updated = true;
 				}
 				else
 				{
@@ -198,7 +202,7 @@ public class NewsUpdate extends IntentService
 			catch(Exception e)
 			{
 				Log.i("UTService","IsFileNull error "+e);
-				checkNull=false;
+				checkNull = false;
 			}
 			
 			return checkNull;
