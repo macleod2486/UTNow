@@ -55,7 +55,7 @@ public class UTBroadcast extends BroadcastReceiver
 			edit.putBoolean("notifCancel", false);
 			edit.commit();
 			
-			Log.i("UTBroadcase","UTService started");
+			Log.i("UTBroadcast","UTService started");
 		}
 		else
 		{

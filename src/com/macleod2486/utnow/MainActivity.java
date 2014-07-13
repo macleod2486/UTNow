@@ -66,7 +66,7 @@ public class MainActivity extends ActionBarActivity
 	{
 		if(index == 0 && !main.isAdded())
 		{
-			getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
+			getSupportFragmentManager().beginTransaction().replace(R.id.container, main, "main").commit();
 		}
 		else
 		{
@@ -123,7 +123,7 @@ public class MainActivity extends ActionBarActivity
 			public void onItemClick(AdapterView parent, View view, int position, long id)
 			{
 				Log.i("MainActivity","Position "+position);
-				
+				getSupportFragmentManager().beginTransaction().replace(R.id.container, main, "main").commit();
 				if(position == 0)
 				{
 					index = 0;
@@ -155,7 +155,7 @@ public class MainActivity extends ActionBarActivity
 		getSupportActionBar().setHomeButtonEnabled(true);
 		
 		//Displays the first fragment
-		getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
+		getSupportFragmentManager().beginTransaction().replace(R.id.container, main, "main").commit();
 	}
 	
 	@Override
@@ -165,7 +165,7 @@ public class MainActivity extends ActionBarActivity
 		
 		if(getIntent().getAction().equals("starthome"))
 		{
-			getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
+			getSupportFragmentManager().beginTransaction().replace(R.id.container, main, "main").commit();
 		}
 	}
 	
