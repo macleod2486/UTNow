@@ -159,6 +159,17 @@ public class MainActivity extends ActionBarActivity
 	}
 	
 	@Override
+	public void onStart()
+	{
+		super.onStart();
+		
+		if(getIntent().getAction().equals("starthome"))
+		{
+			getSupportFragmentManager().beginTransaction().replace(R.id.container, main).commit();
+		}
+	}
+	
+	@Override
 	public void onStop()
 	{
 		//Start the service in a timely interval
