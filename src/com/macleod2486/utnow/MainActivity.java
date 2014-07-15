@@ -162,7 +162,6 @@ public class MainActivity extends ActionBarActivity
 	public void onStart()
 	{
 		super.onStart();
-		
 		if(getIntent().getAction().equals("starthome"))
 		{
 			getSupportFragmentManager().beginTransaction().replace(R.id.container, main, "main").commit();

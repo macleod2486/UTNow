@@ -1,8 +1,5 @@
 ##UTNow
-General use application for the University of Texas campus
-
-Currently in development
-
+General use android application for the University of Texas campus
 
 ###Contributions
 
@@ -16,13 +13,14 @@ From there follow the example below within the present arrays
 
 Another example that will is valid is
 
-    <item>building name,latitutde,longitude</item> 
+    <item>building name,latitude,longitude</item> 
 
 Where buildingName is the name of the building you are including into the xml
 and latitude and longtitude is the the decimal value of the coordinates of the building.
 This can be easily obtained through here.
 
 http://itouchmap.com/latlong.html
+ 
 
 ###Necessary Libraries
 
