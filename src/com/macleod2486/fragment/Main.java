@@ -138,8 +138,17 @@ public class Main extends Fragment
 			{
 				progress.setVisibility(View.INVISIBLE);
 				reload.setVisibility(View.INVISIBLE);
-				ArrayAdapter<String> adaptor = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,titles);
-				titleList.setAdapter(adaptor);
+				
+				try
+				{
+					ArrayAdapter<String> adaptor = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,titles);
+					titleList.setAdapter(adaptor);
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+				
 			}
 			else
 			{
