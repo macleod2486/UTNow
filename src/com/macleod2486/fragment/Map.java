@@ -283,6 +283,8 @@ public class Map extends Fragment
 			//Sets the camera view as determined by the users settings
 			UT.setMapType(currentMode);
 			
+			UT.setTrafficEnabled(shared.getBoolean("traffic", false));
+			
 			UT.animateCamera(CameraUpdateFactory.newLatLngZoom(UTLoc, 16));
 			
 			Log.i("Google","UT setting set "+UTSel+" "+UT.getMapType());

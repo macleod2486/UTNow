@@ -11,6 +11,11 @@
 	            android:entries="@array/maptypes"
 	            >
 	    </ListPreference>
+	    <CheckBoxPreference 
+	        android:key = "traffic"
+	        android:title = "Real time traffic"
+	        android:defaultValue = "false">
+	    </CheckBoxPreference>
     </PreferenceCategory>
     
     <PreferenceCategory 
