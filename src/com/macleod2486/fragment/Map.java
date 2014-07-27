@@ -228,6 +228,7 @@ public class Map extends Fragment
 		{
 			this.currentMode = Integer.parseInt(UTSel);
 			UT.setMapType(currentMode);
+			UT.setTrafficEnabled(shared.getBoolean("traffic", false));
 		}
 	}
 	
