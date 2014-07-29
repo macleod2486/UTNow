@@ -3,7 +3,7 @@ General use android application for the University of Texas campus
 
 ###Contributions
 
-To contribute building information that can be found to this project go to
+To contribute building information that can be found to this project fork the project then go to
 
     res/values/strings.xml 
 
@@ -20,7 +20,8 @@ and latitude and longtitude is the the decimal value of the coordinates of the b
 This can be easily obtained through here.
 
 http://itouchmap.com/latlong.html
- 
+
+Once completed make a pull request for review 
 
 ###Necessary Libraries
 
