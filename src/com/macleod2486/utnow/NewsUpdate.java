@@ -101,9 +101,12 @@ public class NewsUpdate extends IntentService
 			{
 				Notification notifi;
 				NotificationManager notifiManage = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+				
 				Intent homeIntent = new Intent(getBaseContext(),MainActivity.class);
+				homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				homeIntent.setAction("starthome");
-				PendingIntent homePending = PendingIntent.getActivity(getBaseContext(), 0, homeIntent, 0);
+				
+				PendingIntent homePending = PendingIntent.getActivity(getBaseContext(), 0, homeIntent,  PendingIntent.FLAG_UPDATE_CURRENT);
 				
 				notifi = new Notification(R.drawable.ic_launcher,"UTNow",System.currentTimeMillis());
 				notifi.setLatestEventInfo(getApplicationContext(), "UTNow", "New Events!", homePending);
