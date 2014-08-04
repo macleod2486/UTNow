@@ -61,6 +61,12 @@ public class MainActivity extends ActionBarActivity
 	@Override
 	public void onBackPressed()
 	{
+		if(drawer.isDrawerOpen(drawer))
+		{
+			Log.i("Main","Drawer closed");
+			drawer.closeDrawers();
+		}
+		
 		if(index == 0 && !main.isAdded())
 		{
 			getSupportFragmentManager().beginTransaction().replace(R.id.container, main, "main").commit();
