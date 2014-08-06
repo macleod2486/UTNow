@@ -28,6 +28,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -61,7 +62,7 @@ public class MainActivity extends ActionBarActivity
 	@Override
 	public void onBackPressed()
 	{
-		if(drawer.isDrawerOpen(drawer))
+		if(drawer.isDrawerOpen(GravityCompat.START))
 		{
 			Log.i("Main","Drawer closed");
 			drawer.closeDrawers();
