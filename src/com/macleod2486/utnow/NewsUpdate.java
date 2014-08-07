@@ -108,9 +108,10 @@ public class NewsUpdate extends IntentService
 				
 				PendingIntent homePending = PendingIntent.getActivity(getBaseContext(), 0, homeIntent,  PendingIntent.FLAG_UPDATE_CURRENT);
 				
-				notifi = new Notification(R.drawable.ic_launcher,"UTNow",System.currentTimeMillis());
+				notifi = new Notification(R.drawable.ic_notification,"UTNow",System.currentTimeMillis());
 				notifi.setLatestEventInfo(getApplicationContext(), "UTNow", "New Events!", homePending);
-				notifi.flags = Notification.FLAG_AUTO_CANCEL;
+				notifi.ledARGB = 0xBF5700;
+				notifi.flags = Notification.FLAG_AUTO_CANCEL | Notification.FLAG_SHOW_LIGHTS;
 				
 				notifiManage.notify(0,notifi);
 			}
