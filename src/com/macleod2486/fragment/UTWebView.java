@@ -117,10 +117,12 @@ public class UTWebView extends Fragment
 			ProgressBar progress;
 			Log.i("Client","Current "+progres);
 			progress  = (ProgressBar)webFrag.findViewById(R.id.progress);
+			
 			if(progres<100&&progress!=null)
 			{
 					progress.setProgress(progres);
 			}
+			
 			if(progres==100&&progress!=null)
 				progress.setVisibility(View.GONE);
 		}
@@ -139,13 +141,22 @@ public class UTWebView extends Fragment
 			progress.setVisibility(View.VISIBLE);
 			super.onPageStarted(view, url, favicon);
 		}
+		
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url)
 		{
 			view.loadUrl(url);
+			
 			return true;
 		}
 		
-		
+		@Override
+		public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) 
+		{
+			ProgressBar progress = (ProgressBar)webFrag.findViewById(R.id.progress);
+			progress.setVisibility(View.INVISIBLE);
+			
+			super.onReceivedError(view, errorCode, description, failingUrl);
+		}
 	}
 }
