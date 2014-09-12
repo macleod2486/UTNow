@@ -173,7 +173,7 @@ public class MainActivity extends ActionBarActivity
 			//Start the alarm manager service
 			SharedPreferences.Editor edit = shared.edit();
 			Intent service = new Intent(getApplicationContext(),UTBroadcast.class);
-			PendingIntent pendingService = PendingIntent.getBroadcast(getApplicationContext(),0,service,0);
+			PendingIntent pendingService = PendingIntent.getBroadcast(getApplicationContext(), 0, service, 0);
 			AlarmManager newsUpdate = (AlarmManager)getSystemService(ALARM_SERVICE);
 			
 			//Check for the update every 5 minutes
