@@ -1,0 +1,52 @@
+//this is used to define the plugin android
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.0.0'
+    }
+
+}
+
+
+//here we tell it to get dependencies from maven central (search.maven.org)
+repositories {
+	mavenCentral()
+}
+
+//this is an android app
+apply plugin: 'android'
+
+//here we list our dependencies
+dependencies {
+    compile 'com.google.android.gms:play-services:6.1.+'
+    compile 'com.android.support:support-v4:18.0.+'
+    compile 'com.android.support:appcompat-v7:18.0.+'
+    compile 'org.jsoup:jsoup:1.7.2'
+}
+
+//define some config four our apps (minimum android version, tools version, etc ...)
+android {
+    compileSdkVersion 21
+    buildToolsVersion '21.1.2'
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+    }
+
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 18
+    }
+
+} 

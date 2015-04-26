@@ -1,6 +1,15 @@
-.classpath
-.project
-.settings
+#Eliminate unnecessary directories
+.settings/
 bin/
 gen/
-lint.xml
+.classpath
+.project
+
+#Ignore changes to libraries being assigned
+project.properties
+
+#Ignore gradle
+.gradle/
+build/
+.idea/
+local.properties
